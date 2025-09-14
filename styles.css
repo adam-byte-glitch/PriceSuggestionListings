@@ -1,0 +1,99 @@
+:root{--navy-10:#36414D;--navy:#3C4855;--navy-75:#6D7680;--navy-50:#9DA3AA;--text:#2D3236;--green:#1EB785;--green-10:#E8F8F3;--yellow-10:#FFFAED;--teal-10:#EAF1F4;--purple-10:#F1F0FE;--blue-5:#F2FCFD;--danger:#F05B61;--shadow:0 4px 15px rgba(60,85,73,.2);--ring:0 0 0 3px rgba(0,149,180,.25)}
+*{box-sizing:border-box}
+:focus-visible{outline:none;box-shadow:var(--ring)}
+.button{display:inline-flex;align-items:center;gap:8px;border:1px solid #DDE3E8;border-radius:8px;background:#fff;color:var(--navy-10);padding:8px 12px;font:600 14px/1.3 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;cursor:pointer}
+.button.primary{background:#0095B4;color:#fff;border-color:#0095B4}
+.button.secondary{background:#fff;color:var(--navy-10)}
+.button:disabled{opacity:.5;cursor:not-allowed}
+.help-icon{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(54,65,77,.3);border-radius:50%;inline-size:18px;block-size:18px;font:700 12px/1 Inter;color:var(--navy-10);background:#fff;cursor:pointer}
+.help-pop{position:absolute;z-index:30;background:#fff;border:1px solid #E5E7EB;box-shadow:0 8px 24px rgba(0,0,0,.12);border-radius:8px;padding:10px 12px;max-width:320px;display:none}
+.help-wrap{position:relative;display:inline-block}body{margin:0;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";color:var(--navy-10);background:#fff}
+.container{max-width:1200px;margin:72px auto;padding:0 24px}
+.page-title{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;font-weight:700;font-size:32px;line-height:1.3;color:var(--navy-10);margin:0 0 48px}
+.grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:24px 32px}
+.col{display:flex;flex-direction:column;gap:16px}
+.card{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:24px}
+.card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:16px}
+.info-card{background:#F6FFFD;border-radius:8px;padding:24px}
+#card-earnings{min-height:280px;width:100%;max-width:100%}
+#card-earnings > .section-title{margin-bottom:6px}
+#card-earnings > .subtext{margin:0 0 26px 0}
+#card-earnings .earnings-cards{gap:12px;margin-top:0;flex-wrap:wrap}
+#card-earnings .breakdown{margin-top:26px}
+#card-earnings .actions{margin-top:26px}
+.section-title{font-weight:700;font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;font-size:28px;line-height:1;color:var(--navy);margin:0}
+.subtext{color:var(--navy-75);font-size:14px;line-height:1.18;margin:4px 0 0 0}
+.price-row{display:flex;align-items:baseline;gap:0}
+.price{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;font-weight:700;font-size:36px;color:var(--navy-10);margin-right:4px}
+.price-input{border:none;outline:none;background:transparent;font:700 36px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;color:var(--navy-10);min-width:0;width:auto;padding:0;margin:0}
+.unit{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;font-weight:600;font-size:20px;color:var(--navy-50);margin-left:0}
+.reco{color:var(--navy);font-size:16px;margin-top:6px}
+.link{color:var(--navy-10);font-size:14px;text-decoration:underline;cursor:pointer;position:relative}
+.tooltip-panel{position:absolute;z-index:20;background:#fff;border:1px solid #e5e7eb;box-shadow:0 8px 24px rgba(0,0,0,.12);border-radius:8px;padding:12px 14px;width:min(360px, calc(100vw - 64px));top:calc(100% + 8px);left:0;color:var(--navy-10);font-size:14px;line-height:1.4;display:none}
+.tooltip-panel h4{margin:0 0 6px 0;font:600 14px/1.2 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;color:var(--navy)}
+.tooltip-panel ul{margin:6px 0 0 16px;padding:0}
+.tooltip-panel li{margin:4px 0}
+.chip{display:inline-flex;align-items:center;gap:8px;border-radius:8px;padding:4px 8px;font-size:12px}
+.chip.success{background:var(--green-10);color:var(--green)}
+.chip.disabled{background:#FDEFef;color:var(--danger)}
+.chip.danger{background:#FFF6F6;color:var(--danger);box-shadow:0 0 3.5px rgba(240,91,97,.8)}
+.chip + .subtext, .subtext + .chip{margin-top:2px}
+.input-row{display:flex;align-items:center;gap:8px}
+.input-row .toggle{margin-left:auto}
+.toggle{inline-size:46px;block-size:28px;border-radius:14px;background:var(--navy-75);position:relative;cursor:pointer;flex:none}
+.toggle::after{content:"";position:absolute;inset:4px 22px 4px 4px;border-radius:50%;background:#fff;transition:.2s}
+.toggle.on{background:var(--green)}
+.toggle.on::after{inset:4px 4px 4px 22px}
+.earnings-cards{display:flex;gap:12px;margin-top:8px}
+.e-pill{border-radius:6px;padding:12px;width:150px}
+.e-pill.daily{background:var(--yellow-10)}
+.e-pill.hybrid{background:var(--teal-10)}
+.e-pill.monthly{background:var(--purple-10)}
+.e-title{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;font-weight:600;font-size:20px;margin:0 0 4px}
+.e-amt{font-weight:700;font-size:24px;color:var(--navy-10)}
+.e-sub{color:var(--navy-75);font-size:12px}
+/* Pill-specific title colors to match design */
+.e-pill.daily .e-title{color:#EA7F14}
+.e-pill.hybrid .e-title{color:#0095B4}
+.e-pill.monthly .e-title{color:#7166F9}
+/* Muted earnings description */
+.text-muted-65{color:#5F7287}
+.status-row{margin:8px 0 14px 0;display:flex;align-items:center}
+.breakdown{margin-top:12px}
+/* Breakdown layout */
+.breakdown .row{display:grid;grid-template-columns:repeat(4, 1fr);grid-template-rows:auto auto;align-items:start;padding:12px 16px;border-radius:6px;column-gap:24px}
+.breakdown .row + .row{margin-top:8px}
+.breakdown .cell{display:flex;flex-direction:column;gap:2px;grid-row:2}
+.breakdown .cell.col-1{grid-column:1}
+.breakdown .cell.col-2{grid-column:2}
+.breakdown .cell.col-3{grid-column:3}
+.breakdown .cell.col-4{grid-column:4}
+.breakdown .label{font-size:12px;line-height:1;color:var(--navy-50)}
+.breakdown .value{font-weight:700;font-size:18px;line-height:1.2;color:var(--navy-10)}
+.breakdown .title{font-weight:600;font-size:20px;line-height:1.2;margin:0 0 6px 0;white-space:nowrap;grid-column:1 / span 4;grid-row:1}
+.breakdown .sublabel{font-size:12px;line-height:1;color:var(--navy-75)}
+/* Row-specific title colors */
+.breakdown .row.daily .title{color:#EA7F14}
+.breakdown .row.hybrid .title{color:#0095B4}
+.breakdown .row.monthly .title{color:#7166F9}
+/* Tinted backgrounds to match design */
+.breakdown .row.daily{background:var(--yellow-10)}
+.breakdown .row.hybrid{background:var(--teal-10)}
+.breakdown .row.monthly{background:var(--purple-10)}
+.actions{display:flex;align-items:center;gap:8px;margin-top:8px}
+/* Show/Hide comprehensive breakdown control */
+.toggle-link{display:inline-flex;align-items:center;gap:8px;font:600 14px/1.3 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;color:var(--navy-10);text-decoration:none;background:transparent;border:0;padding:0;cursor:pointer}
+.toggle-link .toggle-label{text-decoration:underline}
+.toggle-icon{inline-size:16px;block-size:16px;border-radius:9999px;border:1px solid rgba(54,65,77,.6);display:inline-flex;align-items:center;justify-content:center;font:700 12px/1 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;color:rgba(54,65,77,.9);flex:none}
+.is-disabled{opacity:.6}
+.title-muted{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;font-weight:600;font-size:24px;color:var(--navy-50)}
+/* responsive breakdown */
+@media (max-width: 640px){
+  .breakdown .row{grid-template-columns:1fr 1fr;column-gap:16px}
+  .breakdown .title{grid-column:1 / -1}
+  .breakdown .cell.col-1{grid-column:1}
+  .breakdown .cell.col-2{grid-column:2}
+  .breakdown .cell.col-3{grid-column:1}
+  .breakdown .cell.col-4{grid-column:2}
+}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
